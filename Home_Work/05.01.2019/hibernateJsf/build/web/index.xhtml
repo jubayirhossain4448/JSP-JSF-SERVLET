@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Name: <h:inputText value="#{studentBeen.student.name}"/><br/>
+            
+            <h:selectOneRadio value = "#{studentBeen.student.gender}"> 
+                <f:selectItem itemValue = "male" itemLabel = "Male" /> 
+                <f:selectItem itemValue = "female" itemLabel = "Female" />
+            </h:selectOneRadio> 
+            
+            Round: <h:selectOneMenu value="#{studentBeen.student.round}">
+                <f:selectItem itemLabel="select round" itemValue="Select Round"/>
+                <f:selectItem itemLabel="round-35" itemValue="Round-35"/>
+                <f:selectItem itemLabel="round-36" itemValue="Round-36"/>
+                <f:selectItem itemLabel="round-37" itemValue="Round-37"/>
+            </h:selectOneMenu><br/>
+            
+            Completed Course:<h:selectManyCheckbox value="#{studentBeen.student.completedCourse}">
+                <f:selectItem itemLabel="ppt" itemValue="PPT"/>
+                <f:selectItem itemLabel="java" itemValue="Java"/>
+                <f:selectItem itemLabel="spring" itemValue="Spring"/>
+            </h:selectManyCheckbox><br/>
+            <h:commandButton action="#{studentBeen.saveStudent()}" value="Submit"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
